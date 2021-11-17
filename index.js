@@ -1,4 +1,9 @@
+const background = document.querySelector("body");
+const container = document.getElementById("container");
+const coloredText = document.getElementById("coloredText")
+const outputFirstLine = document.querySelector("#colorOutput p:first-child");
 const hex = document.getElementById("hex");
+const outputLastLine = document.querySelector("#colorOutput p:last-child");
 // const hex = document.querySelector(".color-hex");
 // const paletteBlock = document.querySelector(".palette-block");
 const colorOutput = document.getElementById("colorOutput");
@@ -19,19 +24,29 @@ function getColor(month, day, hex) {
         const json = JSON.parse(spectrum.responseText);
         const color = json.records[day].color;
 
-        console.log(hex.innerText)
+        background.classList.add("recolored");
+        background.style.backgroundColor = color;
+
+        coloredText.classList.add("recolored");
+        coloredText.style.color = color;
+        
+        colorOutput.style.height = "322px";
+        colorOutput.style.margin = "2rem 0 2rem 0";
+        colorOutput.style.opacity = 1;
+
+        outputFirstLine.classList.add("displayed");
 
         hex.innerText = color.toUpperCase() + "!";
         hex.style.backgroundColor = color;
-        colorOutput.style.height = "322px";
-        colorOutput.style.opacity = 1;
+        hex.classList.add("displayed");
+        
+        outputLastLine.classList.add("displayed");
 
+        container.style.height = "668.5px";
+        
         heading.forEach(function (element) {
             element.style.color = color;
         });
-        // colorBlock.style.display = "block";
-        // paletteMenu.style.display = "block";
-        // paletteBlock.style.display = "none";
     };
 }
 
@@ -76,9 +91,9 @@ document.querySelector(".get-color").addEventListener("click", function () {
     getColor(month, day, hex);
 });
 
-document.querySelector(".get-palettes").addEventListener("click", function () {
-    var baseColor = hex.innerText
-        .substring(0, hex.innerText.length - 1)
-        .substr(1);
-    getPalettes(baseColor);
-});
+// document.querySelector(".get-palettes").addEventListener("click", function () {
+//     var baseColor = hex.innerText
+//         .substring(0, hex.innerText.length - 1)
+//         .substr(1);
+//     getPalettes(baseColor);
+// });
