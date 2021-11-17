@@ -1,63 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="eng">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./index.css">
-</head>
+  <body>
+    <div class="container">
+      <h1>What Color Is Your Day?</h1>
 
-<body>
+      <fieldset class="input-date">
+        <legend>Don't be shy! Enter your birthday!</legend>
+        <label for="months">Month:</label>
+        <input min="1" max="12" value="1" class="js-months" id="months" />
+        <label for="days">Day:</label>
+        <input min="1" max="31" value="1" class="js-days" id="days" />
+        <button class="get-color">OKAY!</button>
+      </fieldset>
 
-  <div>
-    <h1>What Color Is Your Day?</h1>
-  </div>
+      <!-- <div class="color-block">
+        <h2 class="header">Why, your color must be...</h2>
+        <div class="color">
+          <p class="color-hex"></p>
+        </div>
+        <h2 class="footer">Isn't that lovely?</h2>
+      </div> -->
 
-  <div class="user-input">
-    <fieldset>
-      <legend>Don't be shy! Enter your birthday!</legend>
-      <label for="months">Month:</label>
-      <input min="1" max="12" value="1" class="js-months" id="months">
-      <label for="days">Day:</label>
-      <input min="1" max="31" value="1" class="js-days" id="days">
-      <button class="get-color">Okay!</button>
-    </fieldset>
-  </div>
+      <!-- <div class="palette-menu"> -->
 
-  <div class="color-block">
-    <h2 class="header">Why, your color must be...</h2>
-    <div class="color">
-      <p class="color-hex"></p>
+      <!-- <div class="text-block"> -->
+      <!-- <p>
+        But that's not all, sweetie! Use the dropdown below to generate a
+        palette based on your special color. Gorgeous!
+      </p>
+      <br />
+      <label for="palette-modes">Palette Type:</label>
+      <select class="palette-modes">
+        <option value="monochrome">Monochromatic</option>
+        <option value="analogic">Analogous</option>
+        <option value="analogic-complement">Analogous Complementary</option>
+        <option value="quad">Tetradic</option>
+        <option value="complement">Complementary</option>
+        <option value="triad">Triadic</option>
+      </select>
+      <button class="get-palettes">Let's Go!</button> -->
+      <!-- </div> -->
+      <!-- </div> -->
+
+      <!-- <div class="palette-block">
+        <section class="one palette-color"></section>
+        <section class="two palette-color"></section>
+        <section class="three palette-color"></section>
+        <section class="four palette-color"></section>
+        <section class="five palette-color"></section>
+      </div> -->
     </div>
-    <h2 class="footer">Isn't that lovely?</h2>
-  </div>
 
-  <div class="palette-menu">
-
-    <div class="text-block">
-      <p>But that's not all, sweetie! Use the dropdown below to generate a palette based on your special color.
-        Gorgeous!</p><br>
-        <label for="palette-modes">Palette Type:</label>
-        <select class="palette-modes">
-          <option value="monochrome">Monochromatic</option>
-          <option value="analogic">Analogous</option>
-          <option value="analogic-complement">Analogous Complementary</option>
-          <option value="quad">Tetradic</option>
-          <option value="complement">Complementary</option>
-          <option value="triad">Triadic</option>
-        </select>
-        <button class="get-palettes">Let's Go!</button>
-    </div>
-  </div>
-
-  <div class="palette-block">
-    <section class="one palette-color"></section>
-    <section class="two palette-color"></section>
-    <section class="three palette-color"></section>
-    <section class="four palette-color"></section>
-    <section class="five palette-color"></section>
-  </div>
-
-  <script src="./index.js"></script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>
