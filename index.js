@@ -1,5 +1,7 @@
-const hex = document.querySelector(".color-hex");
-const paletteBlock = document.querySelector(".palette-block");
+const hex = document.getElementById("hex");
+// const hex = document.querySelector(".color-hex");
+// const paletteBlock = document.querySelector(".palette-block");
+const colorOutput = document.getElementById("colorOutput");
 const colorBlock = document.querySelector(".color-block");
 const paletteMenu = document.querySelector(".palette-menu");
 
@@ -16,14 +18,20 @@ function getColor(month, day, hex) {
     spectrum.onload = function () {
         const json = JSON.parse(spectrum.responseText);
         const color = json.records[day].color;
+
+        console.log(hex.innerText)
+
         hex.innerText = color.toUpperCase() + "!";
-        displayColor.style.backgroundColor = color;
+        hex.style.backgroundColor = color;
+        colorOutput.style.height = "322px";
+        colorOutput.style.opacity = 1;
+
         heading.forEach(function (element) {
             element.style.color = color;
         });
-        colorBlock.style.display = "block";
-        paletteMenu.style.display = "block";
-        paletteBlock.style.display = "none";
+        // colorBlock.style.display = "block";
+        // paletteMenu.style.display = "block";
+        // paletteBlock.style.display = "none";
     };
 }
 
