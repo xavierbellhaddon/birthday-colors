@@ -8,8 +8,10 @@
 body {
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background: #eeeeee;
+  /* background: #eeeeee; */
+  background-color: lightgray;
   justify-content: center;
   overflow: scroll;
 }
@@ -20,34 +22,35 @@ body.recolored {
 
 h1 {
   font-weight: 600;
-  padding-bottom: 25px;
+  color: white;
+  /* padding-bottom: 25px; */
+  margin-top: 5rem;
   white-space: nowrap;
 }
 
 fieldset {
-  border: none;
-  padding: 0;
+  /* border: none; */
+  /* padding: 0; */
+  border: 1px solid #acacac;
+  border-radius: 0.2rem;
 }
 
 legend {
   margin-bottom: 1rem;
 }
 
-label, button {
-  font-weight: 600;
+input, select {
+  border: 1px solid #acacac;;
+  /* background-color: #eeeeee; */
 }
 
-input, button {
+input, button, select {
   height: 1.5rem;
   border-radius: 0.2rem;
 }
 
 input {
   width: 2rem;
-  border: 1px solid #acacac;;
-  border-radius: 0.2rem;
-  background-color: #eeeeee;
-  margin-right: 0.5em;
 }
 
 button {
@@ -61,8 +64,20 @@ p {
   width: 400px;
 }
 
-#coloredText.recolored {
-  transition: color 1s ease-in-out 4s;
+#container {
+  margin: 2rem 0 5rem 0;
+  justify-content: center;
+  /* height: 282px; */
+  /* height: 282.5px; */
+  height: 849.59px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  background: white;
+  transition: height 1s ease-in-out;
 }
 
 #colorOutput {
@@ -84,13 +99,12 @@ p {
   opacity: 0;
 }
 
-#colorOutput p:first-child.displayed { */
+#colorOutput p:first-child.displayed { 
 animation: fade 1s ease-in-out 2s forwards;
   -webkit-animation: fade 1s ease-in-out 2s forwards;
 }
 
-#colorOutput p:last-child.displayed { */
-
+#colorOutput p:last-child.displayed { 
   animation: fade 1s ease-in-out 6s forwards;
   -webkit-animation: fade 1s ease-in-out 6s forwards;
 }
@@ -121,19 +135,20 @@ animation: fade 1s ease-in-out 2s forwards;
   }
 }
 
-.container {
-  margin: 5rem 0 5rem 0;
-  justify-content: center;
-  /* height: 282px; */
-  height: 282.5px;
-  width: 500px;
+#paletteSelect {
+  margin: 1rem 0 1rem 0;
+}
+
+
+#palette {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 5rem 0 5rem 0;
-  border-radius: 0.5rem;
-  background: white;
-  transition: height 1s ease-in-out;
+}
+
+.palette-color {
+  width: 400px;
+  padding: 10px;
+  background-color: red;
 }
 
 /* .color-hex {
