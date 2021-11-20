@@ -10,7 +10,7 @@ const colorOutput = document.getElementById("colorOutput");
 const paletteMenu = document.getElementById("paletteMenu");
 
 function getColor(month, day, hex) {
-    const displayColor = document.querySelector(".color");
+    // const displayColor = document.querySelector(".color");
     const heading = document.querySelectorAll("h2");
     const spectrum = new XMLHttpRequest();
     const colorURL =
@@ -50,8 +50,8 @@ function getColor(month, day, hex) {
 }
 
 function getPalettes(baseColor) {
-    const paletteModes = document.querySelector(".palette-modes");
-    const mode = paletteModes.options[paletteModes.selectedIndex].value;
+    const paletteOptions = document.getElementById("paletteOptions");
+    const option = paletteOptions.options[paletteOptions.selectedIndex].value;
     const colorOne = document.getElementById("colorOne");
     const colorTwo = document.getElementById("colorTwo");
     const colorThree = document.getElementById("colorThree");
@@ -61,7 +61,7 @@ function getPalettes(baseColor) {
         "https://www.thecolorapi.com/scheme?hex=" +
         baseColor +
         "&format=json&mode=" +
-        mode;
+        option;
 
     const palette = new XMLHttpRequest();
     palette.open("GET", paletteURL);
@@ -90,9 +90,9 @@ document.querySelector(".get-color").addEventListener("click", function () {
     getColor(month, day, hex);
 });
 
-// document.querySelector(".get-palettes").addEventListener("click", function () {
-//     var baseColor = hex.innerText
-//         .substring(0, hex.innerText.length - 1)
-//         .substr(1);
-//     getPalettes(baseColor);
-// });
+document.getElementById("generatePalette").addEventListener("click", function () {
+    let baseColor = hex.innerText
+        .substring(0, hex.innerText.length - 1)
+        .substr(1);
+    getPalettes(baseColor);
+});
